@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
  const login = async (studentId: string, password: string) => {
     try {
       // 发起请求，注意这里用的是同学给的最新地址
-      const response = await fetch('http://5f6dfd32.r23.cpolar.top/api/auth/login', {
+      const response = await fetch('https://f6e7bc1.r23.cpolar.top/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

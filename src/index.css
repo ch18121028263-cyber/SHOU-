@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 220 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 157 62% 52%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 30 100% 63%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 157 62% 48%;
+    --warning: 30 100% 60%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 220 100% 55%;
+
+    --radius: 1rem;
+
+    --glass-bg: 220 20% 97% / 0.7;
+    --glass-bg-strong: 220 20% 96% / 0.85;
+    --glass-border: 220 20% 90% / 0.8;
+    --glass-shadow: 220 60% 50% / 0.08;
+    --glass-blur: 12px;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 220 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 96%;
+    --sidebar-accent-foreground: 220 30% 15%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 220 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsla(var(--glass-border));
+    box-shadow: 0 2px 16px hsla(var(--glass-shadow)),
+                0 1px 3px hsla(220, 20%, 50%, 0.06);
+  }
+  .glass-strong {
+    background: hsla(var(--glass-bg-strong));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsla(var(--glass-border));
+    box-shadow: 0 4px 24px hsla(var(--glass-shadow)),
+                0 1px 4px hsla(220, 20%, 50%, 0.08);
+  }
+  .glass-input {
+    background: hsla(220, 20%, 97%, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid hsla(220, 20%, 88%, 0.7);
+  }
+  .bg-overlay {
+    background: linear-gradient(
+      180deg,
+      hsla(0, 0%, 100%, 0.75) 0%,
+      hsla(0, 0%, 100%, 0.65) 100%
+    );
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(220, 100%, 55%), hsl(200, 100%, 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+}
